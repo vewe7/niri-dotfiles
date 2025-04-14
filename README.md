@@ -1,1 +1,1 @@
-personal backup for my niri dotfiles (very much wip thanks)
+personal backup for my niri dotfiles until i come up with a better solution

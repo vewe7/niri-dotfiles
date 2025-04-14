@@ -35,14 +35,13 @@ cursor {
 output "eDP-1" {
     mode "2256x1504"
     scale 1.6
-    transform "normal"
-    position x=1920 y=0
+    position x=1280 y=0
 }
 
-output "DP-3" {
-  mode "1920x1080"
-  scale 1
-  position x=0 y=0
+output "DP-2" {
+    mode "2560x1600"
+    scale 2
+    position x=0 y=0
 }
 
 layout {
@@ -74,11 +73,12 @@ layout {
         width 3
 
         // Color of the ring on the active monitor.
-        // active-color "#83C092"
+        active-color "#f4dbd6"
         // Color of the ring on inactive monitors.
         inactive-color "#3F5865"
 
-        active-gradient from="#A7C080" to="#83C092" angle=45
+
+        // active-gradient from="#A7C080" to="#83C092" angle=45
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
@@ -102,16 +102,7 @@ screenshot-path "~/Screenshots/Screenshot%Y-%m-%d@%H-%M-%S.png"
 animations {
     // off
     // Slow down this factor.
-    slowdown 1.25
-}
-
-// Example: block out password managers from screen capture.
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-    block-out-from "screen-capture"
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
+    slowdown 1.2
 }
 
 binds {
@@ -254,9 +245,11 @@ binds {
     Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
 
-    // There are also commands that consume or expel a single window to the side.
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+B { toggle-window-floating; }
+    Alt+B { switch-focus-between-floating-and-tiling; }
 
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
@@ -282,14 +275,12 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Mod+P { screenshot; }
+    Ctrl+P { screenshot-screen; }
+    Alt+P { screenshot-window; }
 
     Mod+Shift+E { quit; }
 
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
 

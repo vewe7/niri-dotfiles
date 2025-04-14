@@ -1,14 +1,10 @@
 return {
+  { import = "lazyvim.plugins.extras.lang.typescript" },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
-    },
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = {
-      completion = { autocomplete = false },
+      colorscheme = "catppuccin",
     },
   },
 }

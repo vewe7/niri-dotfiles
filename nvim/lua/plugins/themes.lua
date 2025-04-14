@@ -1,14 +1,29 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = false,
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
-    opts = { variant = "dawn" },
-    -- config = function()
-    -- vim.cmd([[colorscheme rose-pine]])
-    -- end,
+    config = function()
+      require("catppuccin").setup({
+        flavor = "macchiato",
+        transparent_background = true,
+        integrations = {
+          blink_cmp = true,
+          treesitter = true,
+        },
+        custom_highlights = function(colors)
+          return {
+            NeoTreeDirectoryIcon = { fg = colors.rosewater },
+            NeoTreeDirectoryName = { fg = colors.rosewater },
+            NeoTreeRootName = { fg = colors.rosewater },
+            ["@operator"] = { fg = colors.blue },
+            String = { fg = colors.rosewater },
+          }
+        end,
+      })
+    end,
   },
+  --[[
   {
     "neanias/everforest-nvim",
     version = false,
@@ -35,4 +50,5 @@ return {
       })
     end,
   },
+  ]]
 }

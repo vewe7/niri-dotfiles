@@ -3,4 +3,7 @@
 -- Add any additional options here
 --
 
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
+vim.o.expandtab = true
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
