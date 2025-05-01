@@ -30,10 +30,6 @@ yay -S tofi
 ```
 pacman -S waybar
 ```
-```
-```
-```
-```
 
 ## Installation
 
